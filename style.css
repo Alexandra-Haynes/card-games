@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('wood-table.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 8rem);
+    grid-template-rows: 14rem 2rem 14rem;
+    gap: 1rem;
+    cursor: pointer;
+    justify-content: center;
+    
+    padding-top: 2rem;
+}
+
+.deck {
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
+    border-radius: .5rem;
+    color: white;
+    text-shadow: 0 0 6px black;
+    user-select: none;
+    box-shadow: 0 0 3px 1px black;
+}
+
+.computer-deck {
+    background-image: url('deckcover.jpg');
+}
+
+.player-deck {
+    background-image: url('deckcover.jpg');
+}
+
+.text {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 6px black;
+    font-size: 1.6rem;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    background-color: white;
+    box-shadow: 0 0 3px 1px black;
+}
+
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 2rem;
+}
+
+.card::before {
+    top: .2rem;
+    left: .5rem
+}
+
+.card::after {
+    bottom: .2rem;
+    right: .5rem;
+    transform: rotate(180deg);
+}
